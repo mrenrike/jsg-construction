@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%" class="jsg-logo-svg">
+  <defs>
+    <style>
+      .jsg-shape {
+        fill: currentColor;
+        transition: transform 0.3s ease, fill 0.3s ease;
+      }
+      .jsg-accent {
+        fill: #ff5500;
+      }
+    </style>
+  </defs>
+
+  <!-- JSG MODULAR 'S' MONOGRAM (ARCHITECTURAL FOOTPRINT) -->
+  <!-- Top Interlocking Block -->
+  <path class="jsg-shape jsg-part-top" d="
+    M 38 18 
+    H 102 
+    V 42 
+    H 48 
+    C 42 42, 38 38, 38 32 
+    V 18 
+    Z
+  "/>
+
+  <!-- Left Connector / Step -->
+  <path class="jsg-shape jsg-part-mid-left" d="
+    M 18 42 
+    H 42 
+    V 66 
+    H 18 
+    Z
+  "/>
+
+  <!-- Central Ribbon / The 'S' Core Bridge -->
+  <path class="jsg-shape jsg-part-core jsg-accent" d="
+    M 42 42 
+    H 96 
+    C 102 42, 102 48, 102 48 
+    V 66 
+    H 48 
+    C 42 66, 42 66, 42 66 
+    Z
+  "/>
+
+  <!-- Bottom Left Base Foundation -->
+  <path class="jsg-shape jsg-part-bottom-left" d="
+    M 18 78 
+    H 66 
+    C 66 78, 66 84, 60 84 
+    H 18 
+    Z
+    M 18 78 
+    H 66 
+    V 102 
+    H 18 
+    Z
+  "/>
+
+  <!-- Bottom Right Block with Architectural Doorway Opening -->
+  <path class="jsg-shape jsg-part-bottom-right" d="
+    M 66 54 
+    H 102 
+    V 102 
+    H 84 
+    V 78 
+    C 84 72, 78 72, 78 78 
+    V 102 
+    H 66 
+    Z
+  "/>
+</svg>

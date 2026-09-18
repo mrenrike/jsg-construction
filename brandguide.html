@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSG® Construction Limited | Official Visual Identity &amp; Brand Manual</title>
+  <meta name="description" content="Visual Identity Monograph for JSG® Construction Limited, Dublin, Ireland. Director: Sérgio Gratival. Conceived and engineered by BEMKT." />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- TAILWIND CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#080a0d',
+              dark: '#10131a',
+              surface: '#151922',
+              card: '#1c222e',
+              border: '#2a3445',
+              orange: '#ff5500',
+              orangeHover: '#e64a00',
+              concrete: '#e5e7eb',
+              muted: '#94a3b8'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* CAD Grid subtle styling */
+    .grid-bg {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .glow-orange {
+      box-shadow: 0 0 35px rgba(255, 85, 0, 0.35);
+    }
+    .board-card {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+    .board-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 85, 0, 0.15);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080a0d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a3445;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff5500;
+    }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #000 !important; color: #fff !important; }
+      .board-container { page-break-after: always; }
+    }
+  </style>
+</head>
+
+<body class="bg-[#080a0d] text-white font-sans selection:bg-[#ff5500] selection:text-white grid-bg min-h-screen">
+
+  <!-- ============================================================== -->
+  <!-- TOP MASTER BAR (STICKY NAV WITH BILINGUAL & QUICK JUMP) -->
+  <!-- ============================================================== -->
+  <header class="sticky top-0 z-50 bg-[#080a0d]/90 backdrop-blur-md border-b border-[#2a3445] px-4 md:px-8 py-3.5 no-print transition-all">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      
+      <!-- Brand & Project Lockup -->
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-2 group" title="Return to Website">
+          <div class="w-8 h-8 rounded bg-[#151922] border border-[#ff5500]/50 p-1 flex items-center justify-center group-hover:border-[#ff5500] transition-colors">
+            <svg viewBox="0 0 100 100" class="w-full h-full" fill-rule="evenodd">
+              <path d="M 99.69 50.0 L 50.0 50.0 L 50.0 68.71 L 49.08 71.17 L 46.32 73.93 L 44.48 74.85 L 42.64 75.15 L 0.0 75.15 L 0.0 99.69 L 49.69 99.69 L 49.69 80.67 L 51.53 77.3 L 52.45 76.38 L 55.21 74.85 L 74.85 75.15 L 75.15 99.69 L 99.69 99.69 Z M 0.0 49.69 L 24.85 49.69 L 24.85 30.37 L 26.07 27.91 L 27.91 26.07 L 30.37 24.85 L 32.21 24.54 L 99.69 24.54 L 99.69 0.0 L 25.15 0.0 L 25.15 17.79 L 24.85 19.63 L 23.93 21.47 L 21.47 23.93 L 19.63 24.85 L 17.79 25.15 L 0.0 25.15 Z" fill="#ff5500"/>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-baseline gap-1">
+              <span class="font-extrabold text-base tracking-tight text-white">JSG</span>
+              <sup class="text-[#ff5500] font-mono text-[11px] font-bold">®</sup>
+              <span class="text-xs text-gray-400 font-medium hidden sm:inline ml-1">BRAND MANUAL</span>
+            </div>
+            <p class="text-[10px] text-gray-400 font-mono hidden md:block">DIRECTOR: SÉRGIO GRATIVAL &bull; BEMKT</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center Quick Jump Links (Desktop) -->
+      <nav class="hidden lg:flex items-center gap-1.5 font-mono text-[11px] text-gray-400 overflow-x-auto py-1">
+        <a href="#board-cover" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">01 Cover</a>
+        <span class="text-gray-700">&bull;</span>
+        <a href="#board-geometry" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">02 CAD</a>
+        <span class="text-gray-700">&bull;</span>
+        <a href="#board-matrix" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">03 Matrix</a>
+        <span class="text-gray-700">&bull;</span>
+        <a href="#board-palette" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">04 Color</a>
+        <span class="text-gray-700">&bull;</span>
+        <a href="#board-typography" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">05 Type</a>
+        <span class="text-gray-700">&bull;</span>
+        <a href="#board-stationery" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">06 Stationery</a>
+        <span class="text-gray-700">&bull;</span>
+        <a href="#board-hoarding" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">07 Hoarding</a>
+        <span class="text-gray-700">&bull;</span>
+        <a href="#board-workwear" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">08 PPE</a>
+        <span class="text-gray-700">&bull;</span>
+        <a href="#board-fleet" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">09 Fleet</a>
+        <span class="text-gray-700">&bull;</span>
+        <a href="#board-signage" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">10 Signage</a>
+        <span class="text-gray-700">&bull;</span>
+        <a href="#board-digital" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">11 Digital</a>
+        <span class="text-gray-700">&bull;</span>
+        <a href="#board-governance" class="hover:text-[#ff5500] px-2 py-1 rounded transition-colors">12 Seal</a>
+      </nav>
+
+      <!-- Right Controls: Bilingual Switch + Actions -->
+      <div class="flex items-center gap-3">
+        
+        <!-- LIVE BILINGUAL SWITCHER -->
+        <div class="flex items-center bg-[#151922] p-0.5 rounded-md border border-[#2a3445] font-mono text-xs">
+          <button id="btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded transition-all font-bold text-white bg-[#ff5500]">
+            🇬🇧 EN
+          </button>
+          <button id="btn-pt" onclick="setLanguage('pt')" class="px-2.5 py-1 rounded transition-all font-bold text-gray-400 hover:text-white">
+            🇧🇷 PT
+          </button>
+        </div>
+
+        <!-- Download SVG Asset -->
+        <a href="logo_exact_vector.svg" download="JSG_Exact_Monogram_Vector.svg" class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded border border-[#2a3445] bg-[#151922] hover:border-[#ff5500] text-xs font-mono text-gray-300 hover:text-white transition-colors" title="Download exact vector SVG asset">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span class="lang-en">SVG Logo</span>
+          <span class="lang-pt hidden">Logo SVG</span>
+        </a>
+
+        <!-- Print / PDF -->
+        <button onclick="window.print()" class="px-3 py-1 rounded bg-[#ff5500] hover:bg-[#e64a00] text-xs font-bold text-white font-mono tracking-wider transition-colors">
+          <span class="lang-en">PDF EXPORT</span>
+          <span class="lang-pt hidden">EXPORTAR PDF</span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================== -->
+  <!-- HERO INTRODUCTORY SECTION -->
+  <!-- ============================================================== -->
+  <section class="max-w-6xl mx-auto px-4 md:px-8 pt-12 pb-8 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ff5500]/10 border border-[#ff5500]/30 text-[#ff5500] font-mono text-xs font-bold tracking-wider mb-4">
+      <span class="w-2 h-2 rounded-full bg-[#ff5500] animate-pulse"></span>
+      <span class="lang-en">OFFICIAL BRAND IDENTITY MONOGRAPH // BEHANCE ARCHITECTURAL SPECIFICATION</span>
+      <span class="lang-pt hidden">MONOGRAFIA OFICIAL DE IDENTIDADE VISUAL // PADRÃO ARQUITETÔNICO BEHANCE</span>
+    </div>
+
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight uppercase text-white mb-4">
+      JSG<sup class="text-[#ff5500] font-mono font-bold text-2xl md:text-4xl">®</sup> CONSTRUCTION LIMITED
+    </h1>
+    
+    <p class="text-gray-400 max-w-3xl mx-auto text-sm md:text-base leading-relaxed mb-6 font-sans">
+      <span class="lang-en">
+        A definitive architectural design system conceived for Dublin's residential master builder Sérgio Gratival. Engineered with mathematical rigor, material authenticity, and edge-to-edge visual impact.
+      </span>
+      <span class="lang-pt hidden">
+        Um sistema definitivo de design arquitetônico concebido para o mestre construtor de Dublin, Sérgio Gratival. Desenvolvido com rigor matemático, autenticidade material e impacto visual absoluto.
+      </span>
+    </p>
+
+    <!-- Key Identity Metrics Bar -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto font-mono text-xs">
+      <div class="bg-[#151922] border border-[#2a3445] p-3 rounded text-left">
+        <span class="text-gray-500 block text-[10px] uppercase">MANAGING DIRECTOR</span>
+        <span class="font-bold text-white">Sérgio Gratival</span>
+      </div>
+      <div class="bg-[#151922] border border-[#2a3445] p-3 rounded text-left">
+        <span class="text-gray-500 block text-[10px] uppercase">BRAND CUSTODIAN</span>
+        <span class="font-bold text-[#ff5500]">BEMKT DESIGN</span>
+      </div>
+      <div class="bg-[#151922] border border-[#2a3445] p-3 rounded text-left">
+        <span class="text-gray-500 block text-[10px] uppercase">LOCATION</span>
+        <span class="font-bold text-white">Dublin, Ireland</span>
+      </div>
+      <div class="bg-[#151922] border border-[#2a3445] p-3 rounded text-left">
+        <span class="text-gray-500 block text-[10px] uppercase">TRADEMARK STATUS</span>
+        <span class="font-bold text-[#ff5500]">JSG® REGISTERED</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- MAIN PRESENTATION BOARDS STACK (BEHANCE 1600x900 ARCHITECTURE) -->
+  <!-- ============================================================== -->
+  <main class="max-w-6xl mx-auto px-4 md:px-8 space-y-20 pb-24">
+
+    <!-- BOARD 01: Brand Identity Monograph & Hero System -->
+    <section id="board-cover" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 01 // OVERVIEW</span>
+              <span class="lang-pt hidden">CAPÍTULO 01 // VISÃO GERAL</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">DUBLIN, IRELAND // MASTER BUILDERS // BEMKT DESIGN SYSTEM</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">Brand Identity Monograph & Hero System</span>
+            <span class="lang-pt hidden">Monografia de Identidade de Marca & Sistema Heroico</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">Official visual identity presentation for JSG® Construction Limited, directed by Master Builder Sérgio Gratival. Conceived and engineered by BEMKT.</span>
+          <span class="lang-pt hidden">Apresentação oficial da identidade visual da JSG® Construction Limited, sob direção do Construtor Sérgio Gratival. Concebida e estruturada pela BEMKT.</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_01_hero_cover.jpg', 'Brand Identity Monograph & Hero System')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_01_hero_cover.jpg" alt="Brand Identity Monograph & Hero System" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 01 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_01_hero_cover.jpg', 'Brand Identity Monograph & Hero System')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_01_hero_cover.jpg" download="board_01_hero_cover.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOARD 02: Monogram CAD Geometry & Modular Blueprint -->
+    <section id="board-geometry" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 02 // GEOMETRY</span>
+              <span class="lang-pt hidden">CAPÍTULO 02 // GEOMETRIA</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">100×100 VECTOR GRID // R12.5 TANGENT RADIUS // DUAL POLYGON</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">Monogram CAD Geometry & Modular Blueprint</span>
+            <span class="lang-pt hidden">Geometria CAD do Monograma & Planta Modular</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">Mathematical construction on a 100×100 unit modular grid with R12.5 corner fillets and architectural negative space S-channel.</span>
+          <span class="lang-pt hidden">Construção matemática em malha modular de 100×100 unidades com filetes R12.5 e canal 'S' em espaço negativo arquitetônico.</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_02_monogram_cad.jpg', 'Monogram CAD Geometry & Modular Blueprint')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_02_monogram_cad.jpg" alt="Monogram CAD Geometry & Modular Blueprint" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 02 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_02_monogram_cad.jpg', 'Monogram CAD Geometry & Modular Blueprint')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_02_monogram_cad.jpg" download="board_02_monogram_cad.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOARD 03: Identity Matrix, Lockups & Exclusion Zones -->
+    <section id="board-matrix" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 03 // LOCKUP SYSTEM</span>
+              <span class="lang-pt hidden">CAPÍTULO 03 // SISTEMA DE LOGO</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">CLEARSPACE: 1X UNIT // 4 CHROMATIC CONFIGURATIONS // JSG® REGISTERED</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">Identity Matrix, Lockups & Exclusion Zones</span>
+            <span class="lang-pt hidden">Matriz de Identidade, Aplicações & Zonas de Proteção</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">Four official contrast variants (Signal Orange, White Monochrome, Tactical Black, and Horizontal Primary Lockup with registered trademark JSG®).</span>
+          <span class="lang-pt hidden">Quatro variantes oficiais de contraste (Laranja Sinal, Monocromático Branco, Preto Tático e Aplicação Horizontal com marca registrada JSG®).</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_03_logo_matrix.jpg', 'Identity Matrix, Lockups & Exclusion Zones')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_03_logo_matrix.jpg" alt="Identity Matrix, Lockups & Exclusion Zones" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 03 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_03_logo_matrix.jpg', 'Identity Matrix, Lockups & Exclusion Zones')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_03_logo_matrix.jpg" download="board_03_logo_matrix.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOARD 04: Chromatic System & Material Specifications -->
+    <section id="board-palette" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 04 // CHROMATICS</span>
+              <span class="lang-pt hidden">CAPÍTULO 04 // CROMÁTICA</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">RAL 2004 SIGNAL ORANGE // PANTONE 1655 C // INDUSTRIAL GRADE COATINGS</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">Chromatic System & Material Specifications</span>
+            <span class="lang-pt hidden">Sistema Cromático & Especificações de Materiais</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">Engineered architectural color palette matching international industrial standards: RAL 2004, RAL 9005, RAL 7016, RAL 9002, and RAL 7040.</span>
+          <span class="lang-pt hidden">Paleta cromática arquitetônica calibrada por normas industriais internacionais: RAL 2004, RAL 9005, RAL 7016, RAL 9002 e RAL 7040.</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_04_color_palette.jpg', 'Chromatic System & Material Specifications')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_04_color_palette.jpg" alt="Chromatic System & Material Specifications" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 04 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_04_color_palette.jpg', 'Chromatic System & Material Specifications')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_04_color_palette.jpg" download="board_04_color_palette.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOARD 05: Typographic Hierarchy & Engineering Monospace -->
+    <section id="board-typography" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 05 // TYPOGRAPHY</span>
+              <span class="lang-pt hidden">CAPÍTULO 05 // TIPOGRAFIA</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">PRIMARY: PLUS JAKARTA SANS // TECHNICAL: SPACE MONO // 100% ACCESSIBLE</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">Typographic Hierarchy & Engineering Monospace</span>
+            <span class="lang-pt hidden">Hierarquia Tipográfica & Monoespaçado de Engenharia</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">Dual typeface harmony combining geometric structural authority (Plus Jakarta Sans) with rigorous technical measurement (Space Mono).</span>
+          <span class="lang-pt hidden">Harmonia tipográfica dupla combinando autoridade geométrica estrutural (Plus Jakarta Sans) com rigor técnico de medição (Space Mono).</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_05_typography_specimen.jpg', 'Typographic Hierarchy & Engineering Monospace')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_05_typography_specimen.jpg" alt="Typographic Hierarchy & Engineering Monospace" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 05 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_05_typography_specimen.jpg', 'Typographic Hierarchy & Engineering Monospace')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_05_typography_specimen.jpg" download="board_05_typography_specimen.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOARD 06: Corporate Stationery & Luxury Identity Collateral -->
+    <section id="board-stationery" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 06 // STATIONERY</span>
+              <span class="lang-pt hidden">CAPÍTULO 06 // PAPELARIA</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">600GSM DUPLEX BOARD // BLIND EMBOSS // METALLIC HOT STAMP</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">Corporate Stationery & Luxury Identity Collateral</span>
+            <span class="lang-pt hidden">Papelaria Corporativa & Material Institucional de Luxo</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">Matte charcoal 600gsm duplex business cards with blind-debossed monogram, foil-stamped presentation folders, and RIAI contract envelopes.</span>
+          <span class="lang-pt hidden">Cartões de visita em papel duplex carvão fosco 600g com monograma em baixo-relevo seco, pastas com hot-stamping prata e envelopes RIAI.</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_06_stationery.jpg', 'Corporate Stationery & Luxury Identity Collateral')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_06_stationery.jpg" alt="Corporate Stationery & Luxury Identity Collateral" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 06 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_06_stationery.jpg', 'Corporate Stationery & Luxury Identity Collateral')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_06_stationery.jpg" download="board_06_stationery.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOARD 07: Construction Site Hoarding & Perimeter Signage -->
+    <section id="board-hoarding" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 07 // SITE HOARDING</span>
+              <span class="lang-pt hidden">CAPÍTULO 07 // TAPUMES E CANTEIRO</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">12-METRE MODULAR PANELS // UV RESISTANT DIBOND // STATUTORY COMPLIANT</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">Construction Site Hoarding & Perimeter Signage</span>
+            <span class="lang-pt hidden">Tapumes de Obra & Sinalização Perimetral de Canteiro</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">Large-format 12-metre architectural site hoarding deployed across South Dublin prime residential sites with statutory RIAI & S.I. 9 credentials.</span>
+          <span class="lang-pt hidden">Tapume arquitetônico em grande formato de 12 metros instalado nas obras de alto padrão no sul de Dublin com licenças RIAI e S.I. 9.</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_07_site_hoarding.jpg', 'Construction Site Hoarding & Perimeter Signage')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_07_site_hoarding.jpg" alt="Construction Site Hoarding & Perimeter Signage" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 07 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_07_site_hoarding.jpg', 'Construction Site Hoarding & Perimeter Signage')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_07_site_hoarding.jpg" download="board_07_site_hoarding.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOARD 08: High-Visibility PPE & Technical Workwear -->
+    <section id="board-workwear" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 08 // FIELD PPE</span>
+              <span class="lang-pt hidden">CAPÍTULO 08 // VESTUÁRIO E EPIS</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">EN ISO 20471 CLASS 3 // REFLECTIVE 3M SCOTCHLITE // IMPACT RESISTANT</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">High-Visibility PPE & Technical Workwear</span>
+            <span class="lang-pt hidden">EPIs de Alta Visibilidade & Vestuário Técnico de Campo</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">EN ISO 20471 Class 3 certified technical construction apparel, hard helmets with reflective orange JSG® monogram, and ballistic weatherwear.</span>
+          <span class="lang-pt hidden">Vestuário técnico certificado EN ISO 20471 Classe 3, capacetes de segurança com monograma JSG® refletivo e jaquetas balísticas impermeáveis.</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_08_ppe_workwear.jpg', 'High-Visibility PPE & Technical Workwear')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_08_ppe_workwear.jpg" alt="High-Visibility PPE & Technical Workwear" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 08 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_08_ppe_workwear.jpg', 'High-Visibility PPE & Technical Workwear')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_08_ppe_workwear.jpg" download="board_08_ppe_workwear.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOARD 09: Commercial Fleet Livery & Vehicle Graphics -->
+    <section id="board-fleet" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 09 // FLEET LIVERY</span>
+              <span class="lang-pt hidden">CAPÍTULO 09 // FROTA COMERCIAL</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">MERCEDES-BENZ SPRINTER // 3M CAST VINYL // RETROREFLECTIVE ACCENTS</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">Commercial Fleet Livery & Vehicle Graphics</span>
+            <span class="lang-pt hidden">Identidade de Frota Comercial & Grafismos Veiculares</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">Matte graphite Mercedes Sprinter fleet wrap with Signal Orange JSG® branding, Dublin master builder credentials, and 3M reflective chevron safety accents.</span>
+          <span class="lang-pt hidden">Envelopamento da frota Mercedes Sprinter em grafite fosco com marca JSG® em Laranja Sinal, credenciais de construtor e faixas refletivas 3M.</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_09_fleet_van.jpg', 'Commercial Fleet Livery & Vehicle Graphics')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_09_fleet_van.jpg" alt="Commercial Fleet Livery & Vehicle Graphics" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 09 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_09_fleet_van.jpg', 'Commercial Fleet Livery & Vehicle Graphics')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_09_fleet_van.jpg" download="board_09_fleet_van.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOARD 10: Architectural Laser-Cut Metal Signage -->
+    <section id="board-signage" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 10 // PHYSICAL SIGNAGE</span>
+              <span class="lang-pt hidden">CAPÍTULO 10 // SINALIZAÇÃO FÍSICA</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">10MM ANODIZED ALUMINIUM // 3000K WARM BACKLIGHT // CONCRETE STANDOFFS</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">Architectural Laser-Cut Metal Signage</span>
+            <span class="lang-pt hidden">Sinalização Arquitetônica em Metal Cortado a Laser</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">10mm precision waterjet and laser-cut anodized black aluminium plaque with 3000K warm LED halo backlighting, mounted on fair-faced concrete.</span>
+          <span class="lang-pt hidden">Placa de 10mm em alumínio preto anodizado cortado a laser com retroiluminação LED halo 3000K, montada sobre concreto aparente arquitetônico.</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_10_laser_signage.jpg', 'Architectural Laser-Cut Metal Signage')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_10_laser_signage.jpg" alt="Architectural Laser-Cut Metal Signage" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 10 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_10_laser_signage.jpg', 'Architectural Laser-Cut Metal Signage')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_10_laser_signage.jpg" download="board_10_laser_signage.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOARD 11: Digital Ecosystem & Mobile Web Platform -->
+    <section id="board-digital" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 11 // DIGITAL SYSTEM</span>
+              <span class="lang-pt hidden">CAPÍTULO 11 // SISTEMA DIGITAL</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">RESPONSIVE DESKTOP & MOBILE // 120FPS ACCELERATED // SECURE CLIENT PORTAL</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">Digital Ecosystem & Mobile Web Platform</span>
+            <span class="lang-pt hidden">Ecossistema Digital & Plataforma Web Mobile</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">High-performance responsive digital touchpoint featuring luxury residential project galleries, real-time client cost portal, and WCAG 2.1 AAA accessibility.</span>
+          <span class="lang-pt hidden">Touchpoint digital responsivo de alta performance com galeria de projetos residenciais de luxo, portal de custos para clientes e acessibilidade WCAG AAA.</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_11_digital_system.jpg', 'Digital Ecosystem & Mobile Web Platform')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_11_digital_system.jpg" alt="Digital Ecosystem & Mobile Web Platform" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 11 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_11_digital_system.jpg', 'Digital Ecosystem & Mobile Web Platform')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_11_digital_system.jpg" download="board_11_digital_system.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BOARD 12: Brand Governance, Custodianship & BEMKT Sign-Off -->
+    <section id="board-governance" class="board-container scroll-mt-24 space-y-4">
+      
+      <!-- Board Header Rationale (Minimal, Punchy, Bilingual) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#2a3445] pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="text-[#ff5500] font-mono font-bold text-xs tracking-wider">
+              <span class="lang-en">CHAPTER 12 // GOVERNANCE</span>
+              <span class="lang-pt hidden">CAPÍTULO 12 // GOVERNANÇA</span>
+            </span>
+            <span class="h-1 w-1 rounded-full bg-gray-600"></span>
+            <span class="font-mono text-[11px] text-gray-400 uppercase tracking-wider">DIRECTOR SÉRGIO GRATIVAL // BEMKT BRAND ARCHITECTURE // RATIFIED 2026</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight uppercase">
+            <span class="lang-en">Brand Governance, Custodianship & BEMKT Sign-Off</span>
+            <span class="lang-pt hidden">Governança de Marca, Custódia & Homologação BEMKT</span>
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-gray-400 max-w-md font-sans leading-relaxed md:text-right">
+          <span class="lang-en">Official seal of brand authenticity and engineering compliance ratified by Managing Director Sérgio Gratival and BEMKT Brand Architecture.</span>
+          <span class="lang-pt hidden">Selo oficial de autenticidade de marca e conformidade de engenharia ratificado pelo Diretor Sérgio Gratival e BEMKT Arquitetura de Marca.</span>
+        </p>
+      </div>
+
+      <!-- High-Resolution Graphic Board Container (Click to inspect lightbox) -->
+      <div class="board-card relative bg-[#10131a] rounded-xl border border-[#2a3445] overflow-hidden shadow-2xl group cursor-zoom-in" onclick="openLightbox('board_12_brand_governance.jpg', 'Brand Governance, Custodianship & BEMKT Sign-Off')">
+        <!-- Badge Indicator -->
+        <div class="absolute top-4 right-4 z-10 bg-black/80 backdrop-blur-sm border border-[#2a3445] px-3 py-1 rounded text-[11px] font-mono text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+          <span class="lang-en">Click to Expand (1600×900)</span>
+          <span class="lang-pt hidden">Clique para Ampliar (1600×900)</span>
+        </div>
+
+        <img src="board_12_brand_governance.jpg" alt="Brand Governance, Custodianship & BEMKT Sign-Off" class="w-full h-auto object-cover block" loading="lazy" />
+      </div>
+
+      <!-- Board Footer Controls / Quick Copy -->
+      <div class="flex justify-between items-center text-[11px] font-mono text-gray-500 pt-1">
+        <span>BOARD 12 OF 12</span>
+        <div class="flex items-center gap-4">
+          <button onclick="openLightbox('board_12_brand_governance.jpg', 'Brand Governance, Custodianship & BEMKT Sign-Off')" class="hover:text-[#ff5500] transition-colors flex items-center gap-1">
+            <span>[+]</span>
+            <span class="lang-en">Fullscreen View</span>
+            <span class="lang-pt hidden">Ver em Tela Cheia</span>
+          </button>
+          <a href="board_12_brand_governance.jpg" download="board_12_brand_governance.jpg" class="hover:text-white transition-colors flex items-center gap-1">
+            <span>[&darr;]</span>
+            <span class="lang-en">Download JPG</span>
+            <span class="lang-pt hidden">Baixar JPG</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- INTERACTIVE PALETTE & ASSET DOWNLOAD WORKBENCH -->
+    <!-- ============================================================== -->
+    <section class="border-t-2 border-[#2a3445] pt-16 space-y-12 no-print">
+      
+      <div class="text-center space-y-3">
+        <span class="text-[#ff5500] font-mono font-bold text-xs uppercase tracking-widest">// BRAND ASSET WORKBENCH</span>
+        <h2 class="text-3xl font-black uppercase text-white tracking-tight">
+          <span class="lang-en">Digital Assets &amp; Color Specifications</span>
+          <span class="lang-pt hidden">Ativos Digitais &amp; Especificações de Cor</span>
+        </h2>
+        <p class="text-gray-400 text-xs md:text-sm max-w-2xl mx-auto">
+          <span class="lang-en">Copy production hex codes or download verified vector assets for print, architectural fabrication, and digital deployment.</span>
+          <span class="lang-pt hidden">Copie códigos hexadecimais de produção ou baixe arquivos vetoriais homologados para impressão e fabricação física.</span>
+        </p>
+      </div>
+
+      <!-- Interactive Swatches Grid (Click to copy) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        
+        <!-- Swatch 1: Signal Orange -->
+        <div class="bg-[#151922] border border-[#2a3445] p-4 rounded-xl space-y-3 hover:border-[#ff5500] transition-colors cursor-pointer group" onclick="copyToClipboard('#ff5500', 'Signal Orange')">
+          <div class="h-20 w-full rounded-lg bg-[#ff5500] flex items-end justify-end p-2 shadow-inner">
+            <span class="text-[10px] font-mono font-bold text-white bg-black/40 px-1.5 py-0.5 rounded">PRIMARY</span>
+          </div>
+          <div class="space-y-1 font-mono text-xs">
+            <div class="flex justify-between items-center">
+              <span class="text-white font-bold">Signal Orange</span>
+              <span class="text-[10px] text-gray-500 group-hover:text-[#ff5500]">COPY</span>
+            </div>
+            <p class="text-gray-400 text-[11px]">HEX: #FF5500</p>
+            <p class="text-gray-400 text-[11px]">RAL 2004</p>
+            <p class="text-gray-400 text-[11px]">Pantone 1655 C</p>
+          </div>
+        </div>
+
+        <!-- Swatch 2: Deep Obsidian -->
+        <div class="bg-[#151922] border border-[#2a3445] p-4 rounded-xl space-y-3 hover:border-[#ff5500] transition-colors cursor-pointer group" onclick="copyToClipboard('#080a0d', 'Deep Obsidian')">
+          <div class="h-20 w-full rounded-lg bg-[#080a0d] border border-[#2a3445] flex items-end justify-end p-2 shadow-inner">
+            <span class="text-[10px] font-mono font-bold text-gray-400 bg-white/10 px-1.5 py-0.5 rounded">DARK</span>
+          </div>
+          <div class="space-y-1 font-mono text-xs">
+            <div class="flex justify-between items-center">
+              <span class="text-white font-bold">Obsidian Black</span>
+              <span class="text-[10px] text-gray-500 group-hover:text-[#ff5500]">COPY</span>
+            </div>
+            <p class="text-gray-400 text-[11px]">HEX: #080A0D</p>
+            <p class="text-gray-400 text-[11px]">RAL 9005</p>
+            <p class="text-gray-400 text-[11px]">Pantone Black 6 C</p>
+          </div>
+        </div>
+
+        <!-- Swatch 3: Slate Anthracite -->
+        <div class="bg-[#151922] border border-[#2a3445] p-4 rounded-xl space-y-3 hover:border-[#ff5500] transition-colors cursor-pointer group" onclick="copyToClipboard('#242b38', 'Slate Anthracite')">
+          <div class="h-20 w-full rounded-lg bg-[#242b38] flex items-end justify-end p-2 shadow-inner">
+            <span class="text-[10px] font-mono font-bold text-white bg-black/40 px-1.5 py-0.5 rounded">SURFACE</span>
+          </div>
+          <div class="space-y-1 font-mono text-xs">
+            <div class="flex justify-between items-center">
+              <span class="text-white font-bold">Anthracite</span>
+              <span class="text-[10px] text-gray-500 group-hover:text-[#ff5500]">COPY</span>
+            </div>
+            <p class="text-gray-400 text-[11px]">HEX: #242B38</p>
+            <p class="text-gray-400 text-[11px]">RAL 7016</p>
+            <p class="text-gray-400 text-[11px]">Pantone 432 C</p>
+          </div>
+        </div>
+
+        <!-- Swatch 4: Architectural White -->
+        <div class="bg-[#151922] border border-[#2a3445] p-4 rounded-xl space-y-3 hover:border-[#ff5500] transition-colors cursor-pointer group" onclick="copyToClipboard('#ffffff', 'Architectural White')">
+          <div class="h-20 w-full rounded-lg bg-[#ffffff] flex items-end justify-end p-2 shadow-inner">
+            <span class="text-[10px] font-mono font-bold text-black bg-black/10 px-1.5 py-0.5 rounded">LIGHT</span>
+          </div>
+          <div class="space-y-1 font-mono text-xs">
+            <div class="flex justify-between items-center">
+              <span class="text-white font-bold">Pure White</span>
+              <span class="text-[10px] text-gray-500 group-hover:text-[#ff5500]">COPY</span>
+            </div>
+            <p class="text-gray-400 text-[11px]">HEX: #FFFFFF</p>
+            <p class="text-gray-400 text-[11px]">RAL 9003</p>
+            <p class="text-gray-400 text-[11px]">Pantone Bright White</p>
+          </div>
+        </div>
+
+        <!-- Swatch 5: Architectural Concrete -->
+        <div class="bg-[#151922] border border-[#2a3445] p-4 rounded-xl space-y-3 hover:border-[#ff5500] transition-colors cursor-pointer group" onclick="copyToClipboard('#9da3af', 'Architectural Concrete')">
+          <div class="h-20 w-full rounded-lg bg-[#9da3af] flex items-end justify-end p-2 shadow-inner">
+            <span class="text-[10px] font-mono font-bold text-black bg-black/20 px-1.5 py-0.5 rounded">CONCRETE</span>
+          </div>
+          <div class="space-y-1 font-mono text-xs">
+            <div class="flex justify-between items-center">
+              <span class="text-white font-bold">Concrete Gray</span>
+              <span class="text-[10px] text-gray-500 group-hover:text-[#ff5500]">COPY</span>
+            </div>
+            <p class="text-gray-400 text-[11px]">HEX: #9DA3AF</p>
+            <p class="text-gray-400 text-[11px]">RAL 7040</p>
+            <p class="text-gray-400 text-[11px]">Pantone Cool Gray 7 C</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Vector Downloads Bar -->
+      <div class="bg-[#151922] border border-[#2a3445] rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded bg-[#080a0d] border border-[#ff5500] p-2 flex items-center justify-center shrink-0">
+            <svg viewBox="0 0 100 100" class="w-full h-full" fill-rule="evenodd">
+              <path d="M 99.69 50.0 L 50.0 50.0 L 50.0 68.71 L 49.08 71.17 L 46.32 73.93 L 44.48 74.85 L 42.64 75.15 L 0.0 75.15 L 0.0 99.69 L 49.69 99.69 L 49.69 80.67 L 51.53 77.3 L 52.45 76.38 L 55.21 74.85 L 74.85 75.15 L 75.15 99.69 L 99.69 99.69 Z M 0.0 49.69 L 24.85 49.69 L 24.85 30.37 L 26.07 27.91 L 27.91 26.07 L 30.37 24.85 L 32.21 24.54 L 99.69 24.54 L 99.69 0.0 L 25.15 0.0 L 25.15 17.79 L 24.85 19.63 L 23.93 21.47 L 21.47 23.93 L 19.63 24.85 L 17.79 25.15 L 0.0 25.15 Z" fill="#ff5500"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-extrabold text-white text-base">
+              <span class="lang-en">Download Master Vector Assets</span>
+              <span class="lang-pt hidden">Baixar Arquivos Vetoriais Mestres</span>
+            </h4>
+            <p class="text-xs text-gray-400 font-mono">
+              <span class="lang-en">Lossless mathematical SVG curves. Suitable for CNC waterjet, architectural signage, and 4K digital display.</span>
+              <span class="lang-pt hidden">Curvas matemáticas vetoriais SVG sem perda. Adequadas para CNC, corte a laser e telas 4K.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-3 font-mono text-xs">
+          <a href="logo_exact_vector.svg" download="JSG_Exact_Vector_Logo.svg" class="px-4 py-2 bg-[#ff5500] hover:bg-[#e64a00] text-white font-bold rounded flex items-center gap-2 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>DOWNLOAD SVG</span>
+          </a>
+          <button onclick="copySvgCode()" class="px-4 py-2 bg-[#080a0d] hover:bg-[#242b38] border border-[#2a3445] text-gray-300 hover:text-white rounded flex items-center gap-2 transition-colors">
+            <svg class="w-4 h-4 text-[#ff5500]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+            <span id="copy-svg-text">COPY SVG CODE</span>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- FULLSCREEN LIGHTBOX MODAL -->
+  <!-- ============================================================== -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex-col justify-between p-4 md:p-8 no-print" onclick="closeLightbox(event)">
+    <div class="flex justify-between items-center text-white font-mono text-xs border-b border-[#2a3445] pb-4">
+      <span id="lightbox-title" class="text-base font-bold text-white uppercase tracking-wider">BOARD VIEW</span>
+      <div class="flex items-center gap-4">
+        <span class="text-gray-500 text-[11px]">ESC / CLICK OUTSIDE TO CLOSE</span>
+        <button onclick="closeLightboxDirect()" class="bg-[#151922] hover:bg-[#ff5500] text-white px-3 py-1 rounded border border-[#2a3445] text-xs font-bold transition-colors">✕ CLOSE</button>
+      </div>
+    </div>
+    
+    <div class="flex-1 flex items-center justify-center my-4 overflow-auto">
+      <img id="lightbox-img" src="" alt="Zoomed Board" class="max-w-full max-h-[85vh] object-contain rounded border border-[#2a3445] shadow-2xl" onclick="event.stopPropagation()" />
+    </div>
+
+    <div class="flex justify-between items-center text-gray-500 font-mono text-[11px] border-t border-[#2a3445] pt-3">
+      <span>JSG® BRAND MONOGRAPH &bull; 1600×900PX SPECIFICATION</span>
+      <span class="text-[#ff5500] font-bold">AUTHENTICATED BY BEMKT</span>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-[#ff5500] text-white px-4 py-2.5 rounded-lg shadow-xl font-mono text-xs font-bold transform translate-y-20 opacity-0 transition-all duration-300">
+    Copied to clipboard!
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- FOOTER CERTIFICATION & LEGAL SIGN-OFF -->
+  <!-- ============================================================== -->
+  <footer class="border-t border-[#2a3445] bg-[#040507] text-gray-400 py-12 px-4 md:px-8 font-mono text-xs">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+      <div class="space-y-1">
+        <div class="flex items-center justify-center md:justify-start gap-2">
+          <span class="font-extrabold text-white text-base font-sans">JSG<sup class="text-[#ff5500]">®</sup> CONSTRUCTION LIMITED</span>
+        </div>
+        <p class="text-gray-500 text-[11px]">
+          Official Brand Guidelines &amp; Visual Identity System &bull; Version 2.4 (2026)
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center gap-6 text-[11px]">
+        <div>
+          <span class="text-gray-500 uppercase block text-[9px]">MANAGING DIRECTOR</span>
+          <span class="text-white font-bold">SÉRGIO GRATIVAL</span>
+        </div>
+        <div>
+          <span class="text-gray-500 uppercase block text-[9px]">BRAND ARCHITECTURE</span>
+          <span class="text-[#ff5500] font-bold">BEMKT DESIGN</span>
+        </div>
+        <div>
+          <span class="text-gray-500 uppercase block text-[9px]">JURISDICTION</span>
+          <span class="text-white">DUBLIN, IRELAND</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================== -->
+  <!-- JAVASCRIPT CONTROLLERS (BILINGUAL, LIGHTBOX, CLIPBOARD) -->
+  <!-- ============================================================== -->
+  <script>
+    // Bilingual Switcher Logic
+    function setLanguage(lang) {
+      const enElements = document.querySelectorAll('.lang-en');
+      const ptElements = document.querySelectorAll('.lang-pt');
+      const btnEn = document.getElementById('btn-en');
+      const btnPt = document.getElementById('btn-pt');
+
+      if (lang === 'pt') {
+        enElements.forEach(el => el.classList.add('hidden'));
+        ptElements.forEach(el => el.classList.remove('hidden'));
+        
+        btnPt.classList.add('bg-[#ff5500]', 'text-white');
+        btnPt.classList.remove('text-gray-400');
+        btnEn.classList.remove('bg-[#ff5500]', 'text-white');
+        btnEn.classList.add('text-gray-400');
+        localStorage.setItem('jsg_brandguide_lang', 'pt');
+      } else {
+        ptElements.forEach(el => el.classList.add('hidden'));
+        enElements.forEach(el => el.classList.remove('hidden'));
+        
+        btnEn.classList.add('bg-[#ff5500]', 'text-white');
+        btnEn.classList.remove('text-gray-400');
+        btnPt.classList.remove('bg-[#ff5500]', 'text-white');
+        btnPt.classList.add('text-gray-400');
+        localStorage.setItem('jsg_brandguide_lang', 'en');
+      }
+    }
+
+    // Lightbox Modal
+    function openLightbox(imgSrc, title) {
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-img');
+      const titleEl = document.getElementById('lightbox-title');
+      
+      img.src = imgSrc;
+      titleEl.innerText = title;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e.target.id === 'lightbox-modal') {
+        closeLightboxDirect();
+      }
+    }
+
+    function closeLightboxDirect() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightboxDirect();
+    });
+
+    // Clipboard Copy
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2500);
+    }
+
+    function copyToClipboard(text, label) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(`Copied ${label}: ${text}`);
+      });
+    }
+
+    function copySvgCode() {
+      const svgCode = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill-rule="evenodd"><path d="M 99.69 50.0 L 50.0 50.0 L 50.0 68.71 L 49.08 71.17 L 46.32 73.93 L 44.48 74.85 L 42.64 75.15 L 0.0 75.15 L 0.0 99.69 L 49.69 99.69 L 49.69 80.67 L 51.53 77.3 L 52.45 76.38 L 55.21 74.85 L 74.85 75.15 L 75.15 99.69 L 99.69 99.69 Z M 0.0 49.69 L 24.85 49.69 L 24.85 30.37 L 26.07 27.91 L 27.91 26.07 L 30.37 24.85 L 32.21 24.54 L 99.69 24.54 L 99.69 0.0 L 25.15 0.0 L 25.15 17.79 L 24.85 19.63 L 23.93 21.47 L 21.47 23.93 L 19.63 24.85 L 17.79 25.15 L 0.0 25.15 Z" fill="#ff5500"/></svg>`;
+      navigator.clipboard.writeText(svgCode).then(() => {
+        const btn = document.getElementById('copy-svg-text');
+        btn.innerText = 'COPIED TO CLIPBOARD!';
+        showToast('SVG Code Copied!');
+        setTimeout(() => { btn.innerText = 'COPY SVG CODE'; }, 2000);
+      });
+    }
+
+    // Init language from storage or default to EN
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('jsg_brandguide_lang') || 'en';
+      setLanguage(savedLang);
+    });
+  </script>
+
+</body>
+</html>
