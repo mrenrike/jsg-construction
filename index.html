@@ -582,27 +582,27 @@
         <h3 class="text-lg font-bold text-white uppercase tracking-tight mb-1">Meet Managing Director Sérgio Gratival On Site</h3>
         <p class="text-xs text-gray-400 mb-6 font-mono">Dedicated on-site consultations conducted Monday to Friday across Dublin, Kildare &amp; Wicklow.</p>
 
-        <form class="space-y-4 font-mono text-xs" onsubmit="event.preventDefault(); alert('Assessment requested! Thaís from JSG Construction will contact you within 15 minutes during business hours.');">
+        <form id="lead-form" class="space-y-4 font-mono text-xs">
           <div>
             <label class="block text-[10px] uppercase text-gray-400 mb-1">Homeowner Full Name *</label>
-            <input type="text" required placeholder="e.g. Liam Fitzpatrick" class="w-full bg-brand-black border border-brand-border px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs" />
+            <input id="lead-name" type="text" required placeholder="e.g. Liam Fitzpatrick" class="w-full bg-brand-black border border-brand-border px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs" />
           </div>
 
           <div class="grid grid-cols-2 gap-3">
             <div>
               <label class="block text-[10px] uppercase text-gray-400 mb-1">Direct Phone Number *</label>
-              <input type="tel" required placeholder="08X XXX XXXX" class="w-full bg-brand-black border border-brand-border px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs" />
+              <input id="lead-phone" type="tel" required placeholder="08X XXX XXXX" class="w-full bg-brand-black border border-brand-border px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs" />
             </div>
             <div>
               <label class="block text-[10px] uppercase text-gray-400 mb-1">Eircode / Area *</label>
-              <input type="text" required placeholder="e.g. D06 W2R3 / Ranelagh" class="w-full bg-brand-black border border-brand-border px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs" />
+              <input id="lead-eircode" type="text" required placeholder="e.g. D06 W2R3 / Ranelagh" class="w-full bg-brand-black border border-brand-border px-3.5 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs" />
             </div>
           </div>
 
           <div class="grid grid-cols-2 gap-3">
             <div>
               <label class="block text-[10px] uppercase text-gray-400 mb-1">Build Scope *</label>
-              <select required class="w-full bg-brand-black border border-brand-border px-3 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs">
+              <select id="lead-scope" required class="w-full bg-brand-black border border-brand-border px-3 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs">
                 <option value="">Select Scope...</option>
                 <option value="Rear Extension">Bespoke Rear Extension</option>
                 <option value="Two-Storey">Two-Storey Extension</option>
@@ -613,29 +613,63 @@
             </div>
             <div>
               <label class="block text-[10px] uppercase text-gray-400 mb-1">Target Start Date</label>
-              <select required class="w-full bg-brand-black border border-brand-border px-3 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs">
-                <option value="Immediate">Next 30–60 Days</option>
-                <option value="Quarter">Next 3–6 Months</option>
-                <option value="Planning">Awaiting Planning</option>
+              <select id="lead-start-date" required class="w-full bg-brand-black border border-brand-border px-3 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs">
+                <option value="Next 30-60 Days">Next 30&ndash;60 Days</option>
+                <option value="Next 3-6 Months">Next 3&ndash;6 Months</option>
+                <option value="Awaiting Planning">Awaiting Planning</option>
               </select>
             </div>
           </div>
 
           <div>
             <label class="block text-[10px] uppercase text-gray-400 mb-1">Architectural Drawings Status</label>
-            <select class="w-full bg-brand-black border border-brand-border px-3 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs">
-              <option value="Drawings Ready">Architectural Drawings Ready for Tender</option>
-              <option value="Planning Granted">Full Planning Permission Granted</option>
-              <option value="Exempt">Planning Exempt (< 40 sq. m)</option>
-              <option value="Feasibility">Early Feasibility Concept</option>
+            <select id="lead-drawings" class="w-full bg-brand-black border border-brand-border px-3 py-2.5 text-white focus:outline-none focus:border-brand-orange text-xs">
+              <option value="Drawings Ready for Tender">Architectural Drawings Ready for Tender</option>
+              <option value="Full Planning Granted">Full Planning Permission Granted</option>
+              <option value="Planning Exempt">Planning Exempt (&lt; 40 sq. m)</option>
+              <option value="Early Feasibility">Early Feasibility Concept</option>
             </select>
           </div>
 
-          <button type="submit" class="w-full py-4 bg-brand-orange hover:bg-brand-orangeHover text-black font-extrabold uppercase tracking-widest transition-colors font-sans text-xs flex items-center justify-center gap-2 shadow-xl">
+          <button id="lead-submit" type="submit" class="w-full py-4 bg-brand-orange hover:bg-brand-orangeHover text-black font-extrabold uppercase tracking-widest transition-colors font-sans text-xs flex items-center justify-center gap-2 shadow-xl disabled:opacity-60">
             <span>Confirm Site Consultation Request</span>
             <span>&rarr;</span>
           </button>
+          <p id="lead-feedback" class="text-center text-[11px] hidden"></p>
         </form>
+
+        <script>
+          document.getElementById('lead-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const botao = document.getElementById('lead-submit');
+            const aviso = document.getElementById('lead-feedback');
+            botao.disabled = true;
+            aviso.classList.add('hidden');
+            try {
+              const resposta = await fetch('/api/lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  name: document.getElementById('lead-name').value,
+                  phone: document.getElementById('lead-phone').value,
+                  eircode: document.getElementById('lead-eircode').value,
+                  scope: document.getElementById('lead-scope').value,
+                  start_date: document.getElementById('lead-start-date').value,
+                  drawings_status: document.getElementById('lead-drawings').value,
+                }),
+              });
+              if (!resposta.ok) throw new Error('falha no envio');
+              aviso.textContent = 'Request received. Thaís from JSG Construction will contact you within 15 minutes during business hours.';
+              aviso.className = 'text-center text-[11px] text-emerald-400';
+              event.target.reset();
+            } catch (erro) {
+              aviso.textContent = 'Could not send automatically. Please email commercial@jsgconstruction.ie directly.';
+              aviso.className = 'text-center text-[11px] text-red-400';
+            } finally {
+              botao.disabled = false;
+            }
+          });
+        </script>
       </div>
 
     </div>
