@@ -1,4 +1,4 @@
-﻿# 🏗️ JSG® Construction Limited — Acervo Completo do Cliente
+﻿# 🏗️ JSG® Construction Limited: Acervo Completo do Cliente
 
 **Cliente:** JSG® Construction Limited  
 **Managing Director:** Sérgio Gratival  
@@ -60,4 +60,4 @@ Caso queira rodar um servidor web local na sua máquina:
 
 ---
 
-**Desenvolvido por BEMKT para JSG® Construction Limited — Sérgio Gratival.**
+**Desenvolvido por BEMKT para JSG® Construction Limited, Sérgio Gratival.**

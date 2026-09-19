@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /brandguide.html
+
+Sitemap: https://www.jsgconstruction.ie/sitemap.xml
