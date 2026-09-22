@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /brandguide.html
 Disallow: /insights-panel/
+Disallow: /brandbook/
 
 Sitemap: https://www.jsgconstruction.ie/sitemap.xml

@@ -40,6 +40,17 @@
 
   <!-- ANALYTICS: Umami, auto-hospedado, sem cookie e sem dado pessoal -->
   <script defer src="/insights-panel/script.js" data-website-id="ea3c914f-5336-41ae-ad36-238b7b876559"></script>
+  <!-- GA4. Os guias sao a porta de entrada do trafego organico: sem a tag aqui,
+       quem chega por um guia, le, vai para a home e preenche o formulario
+       aparece na GA4 como se tivesse caido na home do nada, e o guia que fez o
+       trabalho nao recebe credito nenhum. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-PCT4GTHYT0", { send_page_view: true, allow_enhanced_conversions: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCT4GTHYT0"></script>
 
   <!-- FONTS: Plus Jakarta Sans & Space Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
